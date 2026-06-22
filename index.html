@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trae Stephens - Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --text-main: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --accent: #3b82f6;
+            --card-bg: #1e1e1e;
+            --section-alt: #18181b;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #333;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        section {
+            padding: 5rem 5%;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-top: 0;
+        }
+        .year-category {
+            font-size: 1.8rem;
+            color: var(--text-main);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 850px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .placeholder-img {
+            width: 100%;
+            height: 300px;
+            background-color: #333;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            text-align: center;
+            padding: 1rem;
+        }
+        .video-container {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-side-by-side {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+        .video-side-by-side .video-wrapper {
+            flex: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .video-side-by-side video {
+            width: 100%;
+            display: block;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .projects-grid .project-card {
+            margin-bottom: 0;
+        }
+        .projects-grid h3 {
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-side-by-side {
+                flex-direction: column;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        ul {
+            color: var(--text-muted);
+            padding-left: 1.2rem;
+        }
+        .course-box {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent);
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 1px solid #333;
+            color: var(--text-muted);
+            background-color: var(--section-alt);
+        }
+        .contact-info {
+            margin: 2rem 0;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Trae Kennedy Stephens</div>
+        <nav>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Hi my name is Trae Stephens</h1>
+            
+            <p class="subtitle">I am a hard-working and innovative professional whose unique background bridges technical project management with immersive digital design. My career began in the construction and surveying sectors, working in roles such as an Apprentice Project Manager and an Apprentice Building Surveyor. In these positions, I learned to read architectural plans, input dimensional calculations, and lead teams to meet strict project targets. This experience instilled in me a rigorous understanding of structural planning and safety, supported by certifications like the Site Supervisor Safety Training Scheme, Level 2 COSHH, and Level 1 Health and Safety in Construction. Today, these organizational and structural skills directly translate into my Digital Design and Production studies, giving me a practical, hands-on advantage when executing stage mechanics, operating overhead rigging, and maintaining complex theatre equipment. Whether I am coordinating work on a construction site or managing a technical production setup, I pride myself on clear communication, prioritizing my workload, and delivering high-quality results on strict deadlines.</p>
+            
+            <p class="subtitle" style="margin-bottom: 2rem;">Alongside my technical and managerial background, I possess a deep passion for art, story writing, and audience immersion. I recently developed a tabletop role-playing game based entirely on an original story, managing the entire pipeline from concept sketches to the physical production of characters, weapons, and costumes. To fully immerse the players, I designed interactive, allergy-friendly props, meticulously mixing food dyes and edible glitter to create safe-to-consume magical potions. This hands-on dedication to world-building and interactive storytelling perfectly aligns with my focus in the Digital Design and Production course. I now channel this creative drive into digital content creation, utilizing industry-standard software like TouchDesigner, Houdini 3D, and the Adobe Creative Suite to design interactive 3D installations and audio-reactive environments. By combining my practical project management experience with my passion for interactive storytelling, I am uniquely equipped to bridge the gap between physical production and cutting-edge digital design.</p>
+            
+            <!-- Showreel Video added here -->
+            <div class="video-container" style="max-width: 850px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+                <video autoplay loop muted controls>
+                    <source src="showreel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <a href="#work" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="work" style="background-color: var(--section-alt);">
+        <div class="container">
+            <h2>Featured Projects</h2>
+
+            <!-- ===================== YEAR 3 ===================== -->
+            <h3 class="year-category">Year 3</h3>
+            
+            <!-- Main Year 3 Project -->
+            <div class="project-card">
+                <div class="video-side-by-side">
+                    <div class="video-wrapper">
+                        <video autoplay loop muted controls>
+                            <source src="VID_20260601_130756163.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="video-wrapper">
+                        <video autoplay loop muted controls>
+                            <source src="VID_20260601_120016797.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <h3>Immersive Dual-Rig Entertainment System</h3>
+                <p><strong>The Context:</strong> Commercial 360-camera booths at live events often suffer from high software subscription costs, long post-production wait times, and a rapid loss of audience interest. The objective was to innovate live event entertainment by creating a cost-effective, multipurpose interactive rig.</p>
+                <p><strong>My Role:</strong> Lead Interactive Designer. I engineered a dual-function entertainment system that keeps users engaged by eliminating wait times and offering real-time, customizable visual content. I successfully integrated a live feed from a 360-camera booth with an interactive Kinect rig.</p>
+                <p><strong>The Process:</strong></p>
+                <ul>
+                    <li>Developed real-time visual content for both a 360-camera rig and a Kinect interactive rig using TouchDesigner.</li>
+                    <li>Built complex audio-reactive environments ("Outrun", "Moving Space", "How Deep Is Your Love") utilizing nodes like Phong, Feedback Edge, and Noise.</li>
+                    <li>Leveraged Xbox Kinect v2 point cloud, depth, and color indices to allow users to physically manipulate digital projections (e.g., glitch effects, particle systems).</li>
+                    <li>Synchronized a virtual camera node to match a physical 360-booth arm's speed, placing users inside seamless, interchangeable UV-mapped worlds.</li>
+                </ul>
+            </div>
+
+            <!-- Second Year 3 Project (Made Full-Width) -->
+            <div class="project-card">
+                <div class="video-container">
+                    <video autoplay loop muted controls>
+                        <source src="Title Sequence Pre Vis Edits -18.3.26.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h3>Screens Project - Skimmr</h3>
+                <p><strong>The Context:</strong> The <em>Skimmr</em> project involved the production of a title sequence for a film set in a passive-aggressive corporate office environment. The shoot required executing a precise shot list across multiple locations, including exterior entrances, security gates, and a studio meeting room, to establish the film's narrative tone and reveal the company branding.</p>
+                <p><strong>My Role:</strong> Digital Imaging Technician (DIT). I served as the essential bridge between the artistic vision of the filmmakers and the technical demands of digital cinematography, safeguarding footage and ensuring a seamless transition from shooting to post-production.</p>
+                <p><strong>The Process:</strong></p>
+                <ul>
+                    <li>Organized, backed up, and verified all digital footage to ensure no data was lost and files were perfectly prepped for post-production.</li>
+                    <li>Applied temporary color grades and on-set adjustments to match the cinematographer’s vision, ensuring visual consistency across all scenes.</li>
+                    <li>Provided strict technical oversight by monitoring camera settings, resolution, aspect ratio, codecs, LUTs, and frame rates to preserve the creative integrity of the digital footage.</li>
+                    <li>Acted as the primary workflow coordinator and liaison between the production and post-production teams to facilitate a smooth handoff of footage and metadata.</li>
+                </ul>
+            </div>
+
+            <!-- ===================== YEAR 2 ===================== -->
+            <h3 class="year-category">Year 2</h3>
+
+            <!-- Main Year 2 Project -->
+            <div class="project-card">
+                <div class="video-side-by-side">
+                    <!-- First Custom Video -->
+                    <div class="video-wrapper">
+                        <video autoplay loop muted controls>
+                            <source src="video_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Second Custom Video -->
+                    <div class="video-wrapper">
+                        <video autoplay loop muted controls>
+                            <source src="video_2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                
+                <h3>Sights, Sounds, and Serotonin</h3>
+                <p><strong>The Context:</strong> A fun, interactive exploration into the relationship between seeing, hearing, and feeling, and how basic movements can produce serotonin. The goal was to create panels that combine physical audience interaction with visually stimulating images and music to promote mental well-being.</p>
+                <p><strong>My Role:</strong> Lead Interactive Designer. I developed three distinct interactive environments that tracked audience movement and reacted to audio inputs to evoke specific emotional responses.</p>
+                <p><strong>The Process:</strong></p>
+                <ul>
+                    <li>Designed three unique experiential panels utilizing TouchDesigner and an Xbox Kinect sensor.</li>
+                    <li>Mapped low, mid, and high audio harmonics to visuals so the environments would dynamically react to specific songs.</li>
+                    <li>Converted audience body movements into data (like optic flow) to allow physical manipulation of the digital environments.</li>
+                </ul>
+            </div>
+
+            <!-- Second Year 2 Project (Made Full-Width) -->
+            <div class="project-card">
+                <!-- Third Custom Video -->
+                <div class="video-container">
+                    <video autoplay loop muted controls>
+                        <source src="video_3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h3>Screen Production 1: The Graduate & The Card</h3>
+                <p><strong>The Context:</strong> The project involved the back-to-back filming of two short films, <em>The Graduate</em> and <em>The Card</em>. The production required complex multi-location shoots, including a TV studio, a basement dance floor, and office spaces, necessitating a highly adaptable and reliable live video monitoring setup.</p>
+                <p><strong>My Role:</strong> Monitor and Playback Engineer. I was responsible for setting up and managing the on-set monitoring and playback systems. I ensured the director, Director of Photography (DOP), and crew could view live feeds and recorded takes in real-time for immediate feedback, while troubleshooting any technical video feed issues.</p>
+                <p><strong>The Process:</strong></p>
+                <ul>
+                    <li>Designed and built a compact, mobile "video village" on a two-tier trolley to accommodate rapid location changes and small set spaces.</li>
+                    <li>Configured and managed wireless encoders, receivers, SDI distribution, and ATEM switchers to route high-definition video to multiple department monitors.</li>
+                    <li>Overcame distance and signal blocking challenges by utilizing an NDI (Network Device Interface) encoder to patch camera feeds through the building's internal network to an NDI receiver.</li>
+                    <li>Monitored timecode synchronization across devices and maintained detailed manual shot logs to assist the Digital Imaging Technician (DIT) with syncing audio and video for dailies.</li>
+                </ul>
+            </div>
+
+            <!-- ===================== YEAR 1 ===================== -->
+            <h3 class="year-category">Year 1</h3>
+
+            <!-- Main Year 1 Project -->
+            <div class="project-card">
+                <div class="video-container">
+                    <video autoplay loop muted controls>
+                        <source src="animated mini movie trailer - final cut.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h3>Action Editing & Compositing</h3>
+                <p><strong>The Context:</strong> An academic exploration into fast-paced action editing and visual effects compositing using existing anime assets.</p>
+                <p><strong>My Role:</strong> Lead Editor and Compositor. I was responsible for cutting the raw footage to match the audio rhythm, compositing energy blasts, and applying dynamic lighting effects to elevate the visual intensity.</p>
+                <p><strong>The Process:</strong></p>
+                <ul>
+                    <li>Utilized Adobe Premiere Pro and After Effects.</li>
+                    <li>Established a high-energy pacing structure on the timeline.</li>
+                    <li>Layered visual effects—including auras, energy spheres, and impact flashes—using advanced masking and blending modes to seamlessly integrate them with the original animation.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I’m Trae Kennedy Stephens. I am currently studying Digital Design and Production, where I am developing a strong foundation in visual communication, interactive media, and technical production. I am passionate about creating digital experiences that are not only aesthetically striking but highly functional.</p>
+            <p><strong>Technical Toolkit:</strong> TouchDesigner, Xbox Kinect Integration, Adobe Creative Suite (Premiere Pro, After Effects) and Projection Mapping.</p>
+            
+            <div class="course-box">
+                <h3 style="margin-bottom: 10px; font-size: 1.25rem;">Academic Background: Digital Design & Production</h3>
+                <p style="margin: 0; font-size: 0.95rem;">The Digital Design and Production course is a comprehensive program that blends theoretical performance analysis with practical technical training. Students evaluate various contemporary live performances and exhibitions to study elements like set design, lighting, costumes, and audience reception. The practical curriculum trains students in stage mechanics, overhead rigging, equipment maintenance, and associated studies in electrics and sound for theatre. A major focus is placed on digital content creation, where students learn to use industry-standard software such as Adobe After Effects, Premiere Pro, Illustrator, Houdini 3D, TouchDesigner, Resolume, DaVinci Resolve, and D3 (disguise). Through hands-on projects and technical workshops, students develop skills in 2D and 3D animation, motion capture, projection mapping, cinematography, and camera fundamentals. Furthermore, the course prepares students for the professional industry by teaching essential freelance business skills, including managing contracts, quoting, invoicing, and understanding taxes.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I am actively looking for opportunities to apply my interactive design and production skills in a collaborative environment.</p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:traestephens23@gmail.com">traestephens23@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:07376516452">07376516452</a></p>
+            </div>
+
+            <a href="mailto:traestephens23@gmail.com" class="btn" style="margin-top: 1rem;">Get In Touch</a>
+            <p style="margin-top: 3rem; font-size: 0.9rem;">© 2026 Trae Kennedy Stephens. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
